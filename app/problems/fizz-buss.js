@@ -13,6 +13,5 @@ const fizzBuzz = function (nums) {
   }
   return newNums;
 };
-console.log(fizzBuzz(15));
 
 module.exports = fizzBuzz;
