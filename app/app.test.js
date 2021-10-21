@@ -1,9 +1,9 @@
-const reverseString = require("./problems/reverse-string");
+const reverseStringTwo = require("./problems/reverse-string-ii");
 
 describe("Test reverse string leetcode practice", () => {
-  let theString = ["h", "e", "l", "l", "o"];
-  let expected = ["o", "l", "l", "e", "h"];
+  let theString = "Let's take LeetCode contest";
+  let expected = "s'teL ekat edoCteeL tsetnoc";
   test("it should return reversed string", () => {
-    expect(reverseString(theString)).toEqual(expected);
+    expect(reverseStringTwo(theString)).toEqual(expected);
   });
 });
