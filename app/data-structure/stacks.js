@@ -39,6 +39,9 @@ class Stack {
   peek() {
     return this.storage[this.size];
   }
+  length() {
+    return this.size;
+  }
 }
 
 const stack = new Stack();
@@ -55,5 +58,6 @@ console.log(stack);
 console.log(stack.pop());
 
 console.log(stack);
+console.log(stack.length());
 // See last element of the stack
 console.log(stack.peek());
