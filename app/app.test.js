@@ -2,6 +2,7 @@ const downDetector = require("./problems/down-detector");
 const palindrome = require("./problems/palindrome");
 const fizzBuzz = require("./problems/fizz-buss");
 const { fibonaci, fibonaciRec } = require("./problems/fibonaci");
+const compareTriplets = require("./problems/triplest");
 
 describe("Test down detector interview problems", () => {
   let exp1 = 5;
@@ -108,5 +109,16 @@ describe("Fibonaci Number", () => {
   });
   test("should return 5", () => {
     expect(fibonaciRec(5)).not.toEqual(4);
+  });
+});
+
+describe("Test triplets score", () => {
+  let alice = [17, 28, 30],
+    bob = [99, 16, 8];
+  test("should return [2,1]", () => {
+    expect(compareTriplets(alice, bob)).toEqual([2, 1]);
+  });
+  test("should not return [0,0]", () => {
+    expect(compareTriplets(alice, bob)).not.toEqual([0, 0]);
   });
 });
