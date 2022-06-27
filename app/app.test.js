@@ -1,4 +1,8 @@
 const downDetector = require("./problems/down-detector");
+const palindrome = require("./problems/palindrome");
+const fizzBuzz = require("./problems/fizz-buss");
+const { fibonaci, fibonaciRec } = require("./problems/fibonaci");
+
 describe("Test down detector interview problems", () => {
   let exp1 = 5;
   let exp2 = 3;
@@ -63,5 +67,46 @@ describe("Test down detector interview problems", () => {
   });
   test(`case #3: ${exp3}`, () => {
     expect(downDetector(arr3, 447)).toEqual(exp3);
+  });
+});
+
+describe("Test palindrome", () => {
+  test("should return true palindrom", () => {
+    expect(palindrome("kodok")).toBeTruthy();
+  });
+  test("should return false palindrom", () => {
+    expect(palindrome("kodek")).toBeFalsy();
+  });
+});
+
+describe("Test Fizz Buzz", () => {
+  test("should return fizz, buzz, & fizz buzz", () => {
+    expect(fizzBuzz(15)).toEqual(
+      expect.arrayContaining(["fizz", "buzz", "fizz buzz"])
+    );
+  });
+  test("should return Fizz", () => {
+    expect(fizzBuzz(4)).toEqual(expect.arrayContaining(["fizz"]));
+  });
+  test("should not return fizz, buzz", () => {
+    expect(fizzBuzz(3)).not.toEqual(expect.arrayContaining(["fizz", "buzz"]));
+  });
+});
+
+describe("Fibonaci Number", () => {
+  test("should return 3", () => {
+    expect(fibonaci(4)).toEqual(3);
+  });
+  test("should return 610", () => {
+    expect(fibonaci(15)).toEqual(610);
+  });
+  test("should return 3", () => {
+    expect(fibonaciRec(4)).toEqual(3);
+  });
+  test("should return 610", () => {
+    expect(fibonaciRec(15)).toEqual(610);
+  });
+  test("should return 5", () => {
+    expect(fibonaciRec(5)).not.toEqual(4);
   });
 });

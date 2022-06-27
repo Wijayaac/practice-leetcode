@@ -84,3 +84,5 @@ var toLowerCase = function (code) {
     return code;
   }
 };
+
+module.exports = palindrome;
