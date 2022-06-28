@@ -3,6 +3,7 @@ const palindrome = require("./problems/palindrome");
 const fizzBuzz = require("./problems/fizz-buss");
 const { fibonaci, fibonaciRec } = require("./problems/fibonaci");
 const compareTriplets = require("./problems/triplest");
+const sumBigArray = require("./problems/sum-big-array");
 
 describe("Test down detector interview problems", () => {
   let exp1 = 5;
@@ -120,5 +121,13 @@ describe("Test triplets score", () => {
   });
   test("should not return [0,0]", () => {
     expect(compareTriplets(alice, bob)).not.toEqual([0, 0]);
+  });
+});
+
+describe("Test sum big array", () => {
+  let array = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005];
+
+  test("should return 5000000015", () => {
+    expect(sumBigArray(array)).toEqual(5000000015);
   });
 });
