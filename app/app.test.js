@@ -4,6 +4,7 @@ const fizzBuzz = require("./problems/fizz-buss");
 const { fibonaci, fibonaciRec } = require("./problems/fibonaci");
 const compareTriplets = require("./problems/triplest");
 const sumBigArray = require("./problems/sum-big-array");
+const diagonalDifference = require("./problems/diagonal-difference");
 
 describe("Test down detector interview problems", () => {
   let exp1 = 5;
@@ -129,5 +130,17 @@ describe("Test sum big array", () => {
 
   test("should return 5000000015", () => {
     expect(sumBigArray(array)).toEqual(5000000015);
+  });
+});
+
+describe("Test sum big array", () => {
+  let array = [
+    [11, 2, 4],
+    [4, 5, 6],
+    [10, 8, -12],
+  ];
+
+  test("should return 15", () => {
+    expect(diagonalDifference(array)).toEqual(15);
   });
 });
