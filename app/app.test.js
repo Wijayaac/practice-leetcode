@@ -139,8 +139,16 @@ describe("Test sum big array", () => {
     [4, 5, 6],
     [10, 8, -12],
   ];
+  let arr2 = [
+    [1, 2, 5],
+    [6, 2, 3],
+    [7, 3, 5],
+  ];
 
   test("should return 15", () => {
     expect(diagonalDifference(array)).toEqual(15);
+  });
+  test("should return 6", () => {
+    expect(diagonalDifference(arr2)).toEqual(6);
   });
 });
