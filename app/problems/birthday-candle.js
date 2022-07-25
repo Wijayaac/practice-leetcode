@@ -14,6 +14,4 @@ const birthdayCandles = (candles) => {
   }
   return count;
 };
-
-candles = [3, 2, 1, 3];
-console.log(birthdayCandles(candles));
+export default birthdayCandles;
