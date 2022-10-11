@@ -51,3 +51,21 @@ console.log(hashTable.remove("darien"));
 console.log(hashTable.remove("mina"));
 
 console.log(hashTable);
+
+
+// Object also considered as Hash Table in JavaScript
+
+const obj = {
+  prop1 : "Hello World",
+  prop2: () => { console.log('I"m a property of the obj') }
+}
+
+console.log(obj.prop1)
+
+console.log(obj['prop1'])
+
+obj.prop2()
+
+obj.prop3 = 125
+
+console.log(obj.prop3)
