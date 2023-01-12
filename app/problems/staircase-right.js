@@ -1,13 +1,14 @@
 const staircase = (n) => {
   let string = "";
   for (let i = 1; i <= n; i++) {
-    for (let j = 1; j <= n - i; j++) {
-      string += ` `;
+    for (let j = 1; j <= n; j++) {
+      if (j <= n - i) {
+        string += ` `;
+      } else {
+        string += `#`;
+      }
     }
-    for (let k = 1; k <= i; k++) {
-      string += `#`;
-    }
-    if (i !== n) {
+    if (i < n) {
       string += "\n";
     }
   }
