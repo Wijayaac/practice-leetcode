@@ -45,5 +45,54 @@ function findSubArrayOptimized(arr, n) {
   return results;
 }
 
-const arrays = [1, 3, 2, 6, -1, 4, 1, 8, 2];
-console.log(findSubArrayOptimized(arrays, 5));
+const arrays = [2, 1, 5, 1, 3, 2];
+// console.log(findSubArrayOptimized(arrays, 5));
+
+// Maximum Sum SubArray of Size K
+function maxSubArrayBrute(k, arr) {
+  // brute force
+  let maxSum = 0;
+  let windowSum = 0;
+  // loop through the array
+  for (let i = 0; i < arr.length - k + 1; i++) {
+    //keep track of sum in current window
+    windowSum = 0;
+    for (let j = i; j < i + k; j++) {
+      windowSum += arr[j];
+    }
+
+    //if currentWindowSum is > maxWindowSum
+    //set currentWindwoSum to maxWindowSum
+    maxSum = Math.max(maxSum, windowSum);
+  }
+  return maxSum;
+}
+
+// console.log(maxSubArrayBrute(3, arrays));
+
+function maxSubArray(k, arr) {
+  // sliding window approach
+  let maxSum = 0;
+  let windowSum = 0;
+  let windowStart = 0;
+
+  // loop through the array
+  for (let i = 0; i < arr.length; i++) {
+    // add the first element
+    windowSum += arr[i];
+
+    // slide the window, we don't need to slide if we haven't hit the window size k
+    if (i >= k - 1) {
+      maxSum = Math.max(maxSum, windowSum);
+
+      // subtract the first element of the window
+      windowSum -= arr[windowStart];
+
+      // slide the window next
+      windowStart++;
+    }
+  }
+  return maxSum;
+}
+
+console.log(maxSubArray(3, arrays));
