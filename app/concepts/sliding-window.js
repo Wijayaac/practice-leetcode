@@ -62,7 +62,7 @@ function maxSubArrayBrute(k, arr) {
     }
 
     //if currentWindowSum is > maxWindowSum
-    //set currentWindwoSum to maxWindowSum
+    //set currentWindowSum to maxWindowSum
     maxSum = Math.max(maxSum, windowSum);
   }
   return maxSum;
